@@ -1,0 +1,51 @@
+package com.fintrack.api.controller;
+
+import com.fintrack.api.domain.entity.Source;
+import com.fintrack.api.dto.request.SourceRegistrationRequest;
+import com.fintrack.api.dto.response.SourceRegistrationResponse;
+import com.fintrack.api.dto.response.SourceStatusResponse;
+import com.fintrack.api.service.SourceService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
+
+@RestController
+@RequestMapping("/v1/sources")
+@RequiredArgsConstructor
+@Tag(name = "Sources", description = "Source registration and management")
+public class SourceController {
+
+    private final SourceService sourceService;
+
+    @PostMapping("/register")
+    @Operation(summary = "Register a new source system")
+    public ResponseEntity<SourceRegistrationResponse> register(
+            @Valid @RequestBody SourceRegistrationRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(sourceService.register(request));
+    }
+
+    @GetMapping("/{sourceId}")
+    @Operation(summary = "Get source details")
+    public ResponseEntity<Source> getSource(@PathVariable UUID sourceId) {
+        return ResponseEntity.ok(sourceService.getSource(sourceId));
+    }
+
+    @GetMapping("/{sourceId}/status")
+    @Operation(summary = "Get source sync status")
+    public ResponseEntity<SourceStatusResponse> getStatus(@PathVariable UUID sourceId) {
+        return ResponseEntity.ok(sourceService.getStatus(sourceId));
+    }
+
+    @DeleteMapping("/{sourceId}")
+    @Operation(summary = "Deactivate a source (soft delete)")
+    public ResponseEntity<Void> deactivate(@PathVariable UUID sourceId) {
+        sourceService.deactivate(sourceId);
+        return ResponseEntity.noContent().build();
+    }
+}

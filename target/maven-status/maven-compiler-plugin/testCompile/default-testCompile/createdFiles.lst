@@ -1,0 +1,6 @@
+com\fintrack\api\controller\IngestionControllerTest.class
+com\fintrack\api\adapter\InvestmentsAdapterTest.class
+com\fintrack\api\adapter\LoansAdapterTest.class
+com\fintrack\api\adapter\CreditAdapterTest.class
+com\fintrack\api\adapter\DebitAdapterTest.class
+com\fintrack\api\controller\SourceControllerTest.class
