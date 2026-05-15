@@ -15,5 +15,5 @@ public record TransactionIngestionRequest(
         @NotEmpty(message = "Transactions list must not be empty")
         @Size(max = 1000, message = "Batch size must not exceed 1000 transactions")
         @Valid
-        List<RawTransactionDto> transactions
+        List<TransactionDto> transactions
 ) {}

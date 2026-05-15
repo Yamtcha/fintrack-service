@@ -1,7 +1,7 @@
 package com.fintrack.api.adapter;
 
 import com.fintrack.api.domain.ApiKeyScope;
-import com.fintrack.api.dto.request.RawTransactionDto;
+import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.common.domain.SourceType;
 import com.fintrack.common.domain.TransactionClass;
@@ -36,8 +36,8 @@ class LoansAdapterTest {
 
     @Test
     void adapt_alwaysProducesDebtPayment() {
-        RawTransactionDto raw = new RawTransactionDto(
-                "LN-001", 150000L, "USD", "Mortgage Payment", Instant.now(), null);
+        TransactionDto raw = new TransactionDto(
+                "LN-001", 150000L, "ZAR","CApitec", "Mortgage Payment", Instant.now(), null);
 
         Transaction result = adapter.adapt(raw, identity);
 
@@ -50,8 +50,8 @@ class LoansAdapterTest {
     @Test
     void adapt_withMetadata_stillProducesDebtPayment() {
         Map<String, Object> metadata = Map.of("loanType", "MORTGAGE", "installment", 36);
-        RawTransactionDto raw = new RawTransactionDto(
-                "LN-002", 200000L, "USD", "Auto Loan Payment", Instant.now(), metadata);
+        TransactionDto raw = new TransactionDto(
+                "LN-002", 200000L, "ZAR","Capitec","Auto Loan Payment", Instant.now(), metadata);
 
         Transaction result = adapter.adapt(raw, identity);
 

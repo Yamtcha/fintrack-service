@@ -37,15 +37,4 @@ public class IngestionController {
     public ResponseEntity<SyncJob> getSyncStatus(@PathVariable String batchId) {
         return ResponseEntity.ok(ingestionService.getSyncJobByBatchId(batchId));
     }
-
-    @GetMapping("/sync/history")
-    @Operation(summary = "Get paginated sync history for the authenticated source")
-    public ResponseEntity<Page<SyncJob>> getSyncHistory(
-            @AuthenticationPrincipal SourceIdentity identity,
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "20") int size,
-            @RequestParam(required = false) SyncJobStatus status) {
-        return ResponseEntity.ok(
-                ingestionService.getSyncHistory(identity.sourceId(), status, PageRequest.of(page, size)));
-    }
 }

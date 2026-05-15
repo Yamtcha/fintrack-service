@@ -1,6 +1,6 @@
 package com.fintrack.api.adapter;
 
-import com.fintrack.api.dto.request.RawTransactionDto;
+import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.common.domain.SourceType;
 import com.fintrack.common.domain.TransactionStatus;
@@ -20,7 +20,7 @@ public class CreditAdapter implements TransactionAdapter {
     }
 
     @Override
-    public Transaction adapt(RawTransactionDto raw, SourceIdentity source) {
+    public Transaction adapt(TransactionDto raw, SourceIdentity source) {
         String kind = raw.metadata() != null ? (String) raw.metadata().get("kind") : null;
 
         return Transaction.builder()
@@ -31,7 +31,7 @@ public class CreditAdapter implements TransactionAdapter {
                 .currency(raw.currency())
                 .amount(BigDecimal.valueOf(raw.amount()).movePointLeft(2))
                 .description(raw.description())
-                .merchantName(raw.description())
+                .merchantName(raw.merchantName())
                 .type(TransactionType.CREDIT)
                 .status(TransactionStatus.PENDING)
                 .transactedAt(raw.transactedAt())

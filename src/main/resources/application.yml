@@ -33,6 +33,12 @@ fintrack:
   ingestion:
     batch-size-limit: 1000
     dedup-ttl-hours: 24
+    adapters:
+      enabled:
+        - CREDIT
+        - DEBIT
+        - LOANS
+        - INVESTMENTS
 
 management:
   endpoints:

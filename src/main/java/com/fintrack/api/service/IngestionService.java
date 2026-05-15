@@ -2,7 +2,7 @@ package com.fintrack.api.service;
 
 import com.fintrack.api.domain.entity.SyncJob;
 import com.fintrack.api.domain.repository.SyncJobRepository;
-import com.fintrack.api.dto.request.RawTransactionDto;
+import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.adapter.AdapterRegistry;
 import com.fintrack.api.adapter.TransactionAdapter;
 import com.fintrack.api.dto.request.TransactionIngestionRequest;
@@ -72,7 +72,7 @@ public class IngestionService {
 
         TransactionAdapter adapter = adapterRegistry.getAdapter(identity.sourceType());
 
-        for (RawTransactionDto raw : request.transactions()) {
+        for (TransactionDto raw : request.transactions()) {
             try {
                 Transaction canonical = adapter.adapt(raw, identity);
                 publisherService.publish(canonical);

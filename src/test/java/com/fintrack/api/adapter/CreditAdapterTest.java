@@ -1,7 +1,7 @@
 package com.fintrack.api.adapter;
 
 import com.fintrack.api.domain.ApiKeyScope;
-import com.fintrack.api.dto.request.RawTransactionDto;
+import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.common.domain.SourceType;
 import com.fintrack.common.domain.TransactionClass;
@@ -35,8 +35,8 @@ class CreditAdapterTest {
 
     @Test
     void adapt_noMetadata_producesCharge() {
-        RawTransactionDto raw = new RawTransactionDto(
-                "TXN-001", 2500L, "USD", "Amazon", Instant.now(), null);
+        TransactionDto raw = new TransactionDto(
+                "TXN-001", 2500L, "ZAR","Amazon", "Amazon", Instant.now(), null);
 
         Transaction result = adapter.adapt(raw, identity);
 
@@ -47,8 +47,8 @@ class CreditAdapterTest {
 
     @Test
     void adapt_kindDebtPayment_producesDebtPayment() {
-        RawTransactionDto raw = new RawTransactionDto(
-                "TXN-002", 50000L, "USD", "Monthly Payment", Instant.now(), Map.of("kind", "DEBT_PAYMENT"));
+        TransactionDto raw = new TransactionDto(
+                "TXN-002", 50000L, "ZAR","Capitec","Monthly Payment", Instant.now(), Map.of("kind", "DEBT_PAYMENT"));
 
         Transaction result = adapter.adapt(raw, identity);
 
@@ -57,8 +57,8 @@ class CreditAdapterTest {
 
     @Test
     void adapt_kindOther_producesCharge() {
-        RawTransactionDto raw = new RawTransactionDto(
-                "TXN-003", 1500L, "USD", "Starbucks", Instant.now(), Map.of("kind", "PURCHASE"));
+        TransactionDto raw = new TransactionDto(
+                "TXN-003", 1500L, "ZAR","Starbucks","Starbucks", Instant.now(), Map.of("kind", "PURCHASE"));
 
         Transaction result = adapter.adapt(raw, identity);
 

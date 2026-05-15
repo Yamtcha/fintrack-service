@@ -1,7 +1,7 @@
 package com.fintrack.api.adapter;
 
 import com.fintrack.api.domain.ApiKeyScope;
-import com.fintrack.api.dto.request.RawTransactionDto;
+import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.common.domain.SourceType;
 import com.fintrack.common.domain.TransactionClass;
@@ -36,23 +36,23 @@ class DebitAdapterTest {
 
     @Test
     void adapt_alwaysProducesPayment() {
-        RawTransactionDto raw = new RawTransactionDto(
-                "TXN-001", 4999L, "USD", "WOOLWORTHS SANDTON", Instant.now(), null);
+        TransactionDto raw = new TransactionDto(
+                "TXN-001", 4999L, "ZAR","WOOLWORTHS", "WOOLWORTHS SANDTON", Instant.now(), null);
 
         Transaction result = adapter.adapt(raw, identity);
 
         assertThat(result.getTransactionClass()).isEqualTo(TransactionClass.PAYMENT);
         assertThat(result.getExternalId()).isEqualTo("TXN-001");
         assertThat(result.getAmount()).isEqualByComparingTo(new BigDecimal("49.99"));
-        assertThat(result.getCurrency()).isEqualTo("USD");
+        assertThat(result.getCurrency()).isEqualTo("ZAR");
         assertThat(result.getSourceId()).isEqualTo(sourceId.toString());
         assertThat(result.getSourceType()).isEqualTo(SourceType.DEBIT);
     }
 
     @Test
     void adapt_debtPaymentMetadata_stillProducesPayment() {
-        RawTransactionDto raw = new RawTransactionDto(
-                "TXN-002", 1000L, "USD", "Payment", Instant.now(), Map.of("kind", "DEBT_PAYMENT"));
+        TransactionDto raw = new TransactionDto(
+                "TXN-002", 1000L, "ZAR","Capitec","Payment", Instant.now(), Map.of("kind", "DEBT_PAYMENT"));
 
         Transaction result = adapter.adapt(raw, identity);
 

@@ -2,6 +2,7 @@ package com.fintrack.api.adapter;
 
 import com.fintrack.common.domain.SourceType;
 import com.fintrack.common.exception.InvalidSourceTypeException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.EnumMap;
@@ -13,10 +14,26 @@ public class AdapterRegistry {
 
     private final Map<SourceType, TransactionAdapter> registry;
 
-    public AdapterRegistry(List<TransactionAdapter> adapters) {
+    public AdapterRegistry(
+            CreditAdapter creditAdapter,
+            DebitAdapter debitAdapter,
+            LoansAdapter loansAdapter,
+            InvestmentsAdapter investmentsAdapter,
+            @Value("${fintrack.ingestion.adapters.enabled}") List<String> enabledAdapters) {
+
+        Map<SourceType, TransactionAdapter> enabledSourceTypes = Map.of(
+                SourceType.CREDIT, creditAdapter,
+                SourceType.DEBIT, debitAdapter,
+                SourceType.LOANS, loansAdapter,
+                SourceType.INVESTMENTS, investmentsAdapter
+        );
+
         registry = new EnumMap<>(SourceType.class);
-        for (TransactionAdapter adapter : adapters) {
-            registry.put(adapter.supports(), adapter);
+        for (String name : enabledAdapters) {
+            SourceType type = SourceType.valueOf(name.toUpperCase());
+            if (enabledSourceTypes.containsKey(type)) {
+                registry.put(type, enabledSourceTypes.get(type));
+            }
         }
     }
 

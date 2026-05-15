@@ -1,7 +1,7 @@
 package com.fintrack.api.adapter;
 
 import com.fintrack.api.domain.ApiKeyScope;
-import com.fintrack.api.dto.request.RawTransactionDto;
+import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.common.domain.SourceType;
 import com.fintrack.common.domain.TransactionClass;
@@ -36,8 +36,8 @@ class InvestmentsAdapterTest {
 
     @Test
     void adapt_alwaysProducesTrade() {
-        RawTransactionDto raw = new RawTransactionDto(
-                "INV-001", 500000L, "USD", "AAPL Buy 10 shares", Instant.now(), null);
+        TransactionDto raw = new TransactionDto(
+                "INV-001", 500000L, "ZAR", "Robinhood", "AAPL Buy 10 shares", Instant.now(), null);
 
         Transaction result = adapter.adapt(raw, identity);
 
@@ -50,8 +50,8 @@ class InvestmentsAdapterTest {
     @Test
     void adapt_withTradeMetadata_stillProducesTrade() {
         Map<String, Object> metadata = Map.of("ticker", "TSLA", "action", "SELL", "shares", 5);
-        RawTransactionDto raw = new RawTransactionDto(
-                "INV-002", 125000L, "USD", "TSLA Sell 5 shares", Instant.now(), metadata);
+        TransactionDto raw = new TransactionDto(
+                "INV-002", 125000L, "ZAR","EasyEquities", "TSLA Sell 5 shares", Instant.now(), metadata);
 
         Transaction result = adapter.adapt(raw, identity);
 

@@ -5,7 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ef854bf-2e14-4ee4-bd24-a30267c775bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/AdapterRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/AdapterRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/CreditAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/CreditAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/DebitAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/DebitAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/InvestmentsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/InvestmentsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/LoansAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/LoansAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/TransactionAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/TransactionAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/IngestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/IngestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/dto/request/RawTransactionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/dto/request/TransactionDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/dto/request/TransactionIngestionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/dto/request/TransactionIngestionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/IngestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/IngestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/CreditAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/CreditAdapterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/DebitAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/DebitAdapterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/InvestmentsAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/InvestmentsAdapterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/LoansAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/LoansAdapterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/controller/IngestionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/controller/IngestionControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/AdapterRegistry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/AdapterRegistry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/CreditAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/CreditAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/DebitAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/DebitAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/InvestmentsAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/InvestmentsAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/LoansAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/LoansAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/TransactionAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/TransactionAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/controller/IngestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/controller/IngestionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/dto/request/RawTransactionDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/dto/request/TransactionIngestionRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/dto/request/TransactionIngestionRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/IngestionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/IngestionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/fintrack-api-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/fintrack-api-1.0.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/fintrack-api-1.0.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/fintrack-api-1.0.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/CreditAdapterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/CreditAdapterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/DebitAdapterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/DebitAdapterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/InvestmentsAdapterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/InvestmentsAdapterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/LoansAdapterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/LoansAdapterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/controller/IngestionControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/controller/IngestionControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +142,7 @@
       <option name="presentableId" value="Default" />
       <updated>1778783758912</updated>
       <workItem from="1778783759950" duration="2674000" />
-      <workItem from="1778786459157" duration="2169000" />
+      <workItem from="1778786459157" duration="6373000" />
     </task>
     <servers />
   </component>

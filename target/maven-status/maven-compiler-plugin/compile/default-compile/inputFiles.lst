@@ -12,7 +12,6 @@ C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\adapter\CreditAdapter.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\adapter\LoansAdapter.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\domain\ApiKeyScope.java
-C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\dto\request\RawTransactionDto.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\domain\entity\ApiKey.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\domain\repository\ApiKeyRepository.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\config\OpenApiConfig.java
@@ -20,6 +19,7 @@ C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\dto\response\SourceRegistrationResponse.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\domain\repository\SourceRepository.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\config\SecurityConfig.java
+C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\dto\request\TransactionDto.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\dto\request\TransactionIngestionRequest.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\config\RedisConfig.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\controller\SourceController.java

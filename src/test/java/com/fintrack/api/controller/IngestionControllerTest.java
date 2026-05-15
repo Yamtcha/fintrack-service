@@ -3,7 +3,7 @@ package com.fintrack.api.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fintrack.api.domain.ApiKeyScope;
 import com.fintrack.api.domain.SyncJobStatus;
-import com.fintrack.api.dto.request.RawTransactionDto;
+import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.dto.request.TransactionIngestionRequest;
 import com.fintrack.api.dto.response.IngestionResponse;
 import com.fintrack.api.security.SourceIdentity;
@@ -50,8 +50,8 @@ class IngestionControllerTest {
 
     @Test
     void ingest_validBatch_returns202() throws Exception {
-        RawTransactionDto txn = new RawTransactionDto(
-                "TXN-001", 4999L, "USD", "WOOLWORTHS SANDTON", Instant.now(), null);
+        TransactionDto txn = new TransactionDto(
+                "TXN-001", 4999L, "ZAR","WOOLWORTHS", "WOOLWORTHS SANDTON", Instant.now(), null);
         TransactionIngestionRequest request = new TransactionIngestionRequest("BATCH-001", List.of(txn));
 
         IngestionResponse response = new IngestionResponse(
@@ -85,8 +85,8 @@ class IngestionControllerTest {
 
     @Test
     void ingest_missingBatchId_returns400() throws Exception {
-        RawTransactionDto txn = new RawTransactionDto(
-                "TXN-001", 4999L, "USD", "WOOLWORTHS", Instant.now(), null);
+        TransactionDto txn = new TransactionDto(
+                "TXN-001", 4999L, "ZAR","WOOLWORTHS", "WOOLWORTHS", Instant.now(), null);
         TransactionIngestionRequest request = new TransactionIngestionRequest("", List.of(txn));
 
         mockMvc.perform(post("/v1/sources/transactions")
@@ -99,8 +99,8 @@ class IngestionControllerTest {
 
     @Test
     void ingest_unauthenticated_returns401() throws Exception {
-        RawTransactionDto txn = new RawTransactionDto(
-                "TXN-001", 4999L, "USD", "WOOLWORTHS", Instant.now(), null);
+        TransactionDto txn = new TransactionDto(
+                "TXN-001", 4999L, "ZAR","WOOLWORTHS", "WOOLWORTHS", Instant.now(), null);
         TransactionIngestionRequest request = new TransactionIngestionRequest("BATCH-001", List.of(txn));
 
         mockMvc.perform(post("/v1/sources/transactions")
