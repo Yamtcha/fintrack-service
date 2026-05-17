@@ -11,7 +11,12 @@ C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\FintrackApiApplication.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\service\SourceService.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\adapter\CreditAdapter.java
+C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\security\JwtAuthFilter.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\adapter\LoansAdapter.java
+C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\controller\AuthController.java
+C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\domain\entity\SourceCredential.java
+C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\dto\response\TokenResponse.java
+C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\dto\request\TokenRequest.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\adapter\InvestmentsAdapter.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\dto\response\SourceRegistrationResponse.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\domain\repository\SourceRepository.java
@@ -21,10 +26,12 @@ C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\controller\SourceController.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\dto\request\SourceRegistrationRequest.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\config\RabbitMQConfig.java
+C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\service\AuthService.java
+C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\security\JwtService.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\dto\response\SourceStatusResponse.java
+C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\domain\repository\SourceCredentialRepository.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\domain\repository\SyncJobRepository.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\adapter\DebitAdapter.java
-C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\security\JwtSourceConverter.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\domain\entity\Source.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\domain\SourceStatus.java
 C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\main\java\com\fintrack\api\dto\response\IngestionResponse.java

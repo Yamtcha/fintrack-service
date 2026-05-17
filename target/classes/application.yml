@@ -5,9 +5,9 @@ spring:
     virtual:
       enabled: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/fintrack
-    username: fintrack
-    password: fintrack
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: validate
@@ -17,24 +17,18 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: fintrack
-    password: fintrack
-  data:
-    redis:
-      host: localhost
-      port: 6379
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: ${OAUTH2_ISSUER_URI}
-  flyway:
-    enabled: true
-    locations: classpath:db/migration
+    host: ${RABBITMQ_HOST}
+    port: 5671
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+    ssl:
+      enabled: true
+
 
 fintrack:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiry-hours: 24
   ingestion:
     batch-size-limit: 1000
     dedup-ttl-hours: 24
@@ -44,18 +38,3 @@ fintrack:
         - DEBIT
         - LOANS
         - INVESTMENTS
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,metrics,prometheus
-  endpoint:
-    health:
-      show-details: when_authorized
-
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
