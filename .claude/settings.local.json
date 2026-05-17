@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(find '/c/Users/yamkela.venfolo/OneDrive - Entelect Software \\(Pty\\) Ltd/Documents/Github/personal/fintrack-commons' -name *.java)",
-      "Bash(head:*)",
-      "Bash(find:*)"
-    ]
-  }
-}
