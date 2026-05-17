@@ -25,7 +25,7 @@ public class DebitAdapter implements TransactionAdapter {
                 .externalId(raw.externalId())
                 .sourceId(source.sourceId().toString())
                 .sourceType(source.sourceType())
-                .transactionClass(TransactionClass.PAYMENT)
+                .transactionClass(TransactionClass.SPENDING)
                 .currency(raw.currency())
                 .amount(BigDecimal.valueOf(raw.amount()).movePointLeft(2))
                 .description(raw.description())

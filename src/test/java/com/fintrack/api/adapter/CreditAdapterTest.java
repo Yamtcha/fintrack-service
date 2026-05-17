@@ -1,6 +1,5 @@
 package com.fintrack.api.adapter;
 
-import com.fintrack.api.domain.ApiKeyScope;
 import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.common.domain.SourceType;
@@ -20,8 +19,7 @@ class CreditAdapterTest {
     private CreditAdapter adapter;
 
     private final UUID sourceId = UUID.randomUUID();
-    private final SourceIdentity identity = new SourceIdentity(
-            sourceId, "Amex Gold", SourceType.CREDIT, ApiKeyScope.READ_WRITE);
+    private final SourceIdentity identity = new SourceIdentity(sourceId, SourceType.CREDIT);
 
     @BeforeEach
     void setUp() {
@@ -40,7 +38,7 @@ class CreditAdapterTest {
 
         Transaction result = adapter.adapt(raw, identity);
 
-        assertThat(result.getTransactionClass()).isEqualTo(TransactionClass.CHARGE);
+        assertThat(result.getTransactionClass()).isEqualTo(TransactionClass.SPENDING);
         assertThat(result.getExternalId()).isEqualTo("TXN-001");
         assertThat(result.getSourceType()).isEqualTo(SourceType.CREDIT);
     }
@@ -62,6 +60,6 @@ class CreditAdapterTest {
 
         Transaction result = adapter.adapt(raw, identity);
 
-        assertThat(result.getTransactionClass()).isEqualTo(TransactionClass.CHARGE);
+        assertThat(result.getTransactionClass()).isEqualTo(TransactionClass.SPENDING);
     }
 }

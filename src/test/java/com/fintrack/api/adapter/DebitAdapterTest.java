@@ -1,6 +1,5 @@
 package com.fintrack.api.adapter;
 
-import com.fintrack.api.domain.ApiKeyScope;
 import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.common.domain.SourceType;
@@ -21,8 +20,7 @@ class DebitAdapterTest {
     private DebitAdapter adapter;
 
     private final UUID sourceId = UUID.randomUUID();
-    private final SourceIdentity identity = new SourceIdentity(
-            sourceId, "Chase Checking", SourceType.DEBIT, ApiKeyScope.READ_WRITE);
+    private final SourceIdentity identity = new SourceIdentity(sourceId, SourceType.DEBIT);
 
     @BeforeEach
     void setUp() {
@@ -41,7 +39,7 @@ class DebitAdapterTest {
 
         Transaction result = adapter.adapt(raw, identity);
 
-        assertThat(result.getTransactionClass()).isEqualTo(TransactionClass.PAYMENT);
+        assertThat(result.getTransactionClass()).isEqualTo(TransactionClass.SPENDING);
         assertThat(result.getExternalId()).isEqualTo("TXN-001");
         assertThat(result.getAmount()).isEqualByComparingTo(new BigDecimal("49.99"));
         assertThat(result.getCurrency()).isEqualTo("ZAR");
@@ -56,6 +54,6 @@ class DebitAdapterTest {
 
         Transaction result = adapter.adapt(raw, identity);
 
-        assertThat(result.getTransactionClass()).isEqualTo(TransactionClass.PAYMENT);
+        assertThat(result.getTransactionClass()).isEqualTo(TransactionClass.DEBT_PAYMENT);
     }
 }

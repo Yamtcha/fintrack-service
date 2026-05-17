@@ -1,7 +1,6 @@
 package com.fintrack.api.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fintrack.api.domain.ApiKeyScope;
 import com.fintrack.api.domain.SyncJobStatus;
 import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.dto.request.TransactionIngestionRequest;
@@ -42,8 +41,7 @@ class IngestionControllerTest {
     private IngestionService ingestionService;
 
     private UsernamePasswordAuthenticationToken sourceAuth() {
-        SourceIdentity identity = new SourceIdentity(
-                UUID.randomUUID(), "Chase Checking", SourceType.DEBIT, ApiKeyScope.READ_WRITE);
+        SourceIdentity identity = new SourceIdentity(UUID.randomUUID(), SourceType.DEBIT);
         return new UsernamePasswordAuthenticationToken(identity, null,
                 List.of(new SimpleGrantedAuthority("ROLE_SOURCE")));
     }

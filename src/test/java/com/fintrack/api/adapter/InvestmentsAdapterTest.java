@@ -1,6 +1,5 @@
 package com.fintrack.api.adapter;
 
-import com.fintrack.api.domain.ApiKeyScope;
 import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.common.domain.SourceType;
@@ -21,8 +20,7 @@ class InvestmentsAdapterTest {
     private InvestmentsAdapter adapter;
 
     private final UUID sourceId = UUID.randomUUID();
-    private final SourceIdentity identity = new SourceIdentity(
-            sourceId, "Fidelity Portfolio", SourceType.INVESTMENTS, ApiKeyScope.READ_WRITE);
+    private final SourceIdentity identity = new SourceIdentity(sourceId, SourceType.INVESTMENTS);
 
     @BeforeEach
     void setUp() {

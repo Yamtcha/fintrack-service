@@ -35,8 +35,7 @@ public class PublisherService {
 
     private List<String> resolveAggregators(TransactionClass transactionClass) {
         return switch (transactionClass) {
-            case PAYMENT      -> List.of("spending");
-            case CHARGE       -> List.of("spending", "debt");
+            case SPENDING -> List.of("spending");
             case DEBT_PAYMENT -> List.of("debt");
             case TRADE        -> List.of("portfolio");
         };

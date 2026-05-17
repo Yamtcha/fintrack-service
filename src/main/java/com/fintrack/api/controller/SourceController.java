@@ -3,7 +3,6 @@ package com.fintrack.api.controller;
 import com.fintrack.api.domain.entity.Source;
 import com.fintrack.api.dto.request.SourceRegistrationRequest;
 import com.fintrack.api.dto.response.SourceRegistrationResponse;
-import com.fintrack.api.dto.response.SourceStatusResponse;
 import com.fintrack.api.service.SourceService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -34,12 +33,6 @@ public class SourceController {
     @Operation(summary = "Get source details")
     public ResponseEntity<Source> getSource(@PathVariable UUID sourceId) {
         return ResponseEntity.ok(sourceService.getSource(sourceId));
-    }
-
-    @GetMapping("/{sourceId}/status")
-    @Operation(summary = "Get source sync status")
-    public ResponseEntity<SourceStatusResponse> getStatus(@PathVariable UUID sourceId) {
-        return ResponseEntity.ok(sourceService.getStatus(sourceId));
     }
 
     @DeleteMapping("/{sourceId}")

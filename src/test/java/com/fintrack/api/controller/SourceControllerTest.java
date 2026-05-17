@@ -41,7 +41,7 @@ class SourceControllerTest {
     @Test
     void register_validRequest_returns201() throws Exception {
         SourceRegistrationRequest request = new SourceRegistrationRequest(
-                "Chase Checking", SourceType.DEBIT, null);
+                "Chase Checking", SourceType.DEBIT);
 
         UUID sourceId = UUID.randomUUID();
         SourceRegistrationResponse response = new SourceRegistrationResponse(
@@ -62,7 +62,7 @@ class SourceControllerTest {
     @Test
     void register_missingName_returns400() throws Exception {
         SourceRegistrationRequest request = new SourceRegistrationRequest(
-                "", SourceType.DEBIT, null);
+                "", SourceType.DEBIT);
 
         mockMvc.perform(post("/v1/sources/register")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -98,21 +98,6 @@ class SourceControllerTest {
 
         mockMvc.perform(get("/v1/sources/{sourceId}", sourceId))
                 .andExpect(status().isNotFound());
-    }
-
-    @Test
-    @WithMockUser
-    void getStatus_existingSource_returns200() throws Exception {
-        UUID sourceId = UUID.randomUUID();
-        SourceStatusResponse statusResponse = new SourceStatusResponse(
-                sourceId, SourceStatus.ACTIVE, Instant.now(), 42L, 10420L);
-
-        when(sourceService.getStatus(sourceId)).thenReturn(statusResponse);
-
-        mockMvc.perform(get("/v1/sources/{sourceId}/status", sourceId))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.totalBatchesProcessed").value(42))
-                .andExpect(jsonPath("$.totalTransactionsProcessed").value(10420));
     }
 
     @Test

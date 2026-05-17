@@ -4,8 +4,6 @@ import com.fintrack.api.domain.SourceStatus;
 import com.fintrack.common.domain.SourceType;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
 
 import java.time.Instant;
 import java.util.UUID;
@@ -30,10 +28,6 @@ public class Source {
     @Enumerated(EnumType.STRING)
     @Column(name = "source_type", nullable = false)
     private SourceType sourceType;
-
-    @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "config", columnDefinition = "jsonb")
-    private String config;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
