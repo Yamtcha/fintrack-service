@@ -25,8 +25,18 @@ public class IngestionService {
     private final BatchProcessorService batchProcessorService;
 
     @Transactional
-    public IngestionResponse ingest(TransactionIngestionRequest request) {
+    public IngestionResponse ingest(TransactionIngestionRequest request, String idempotencyKey) {
         SourceIdentity identity = resolveIdentity();
+
+        // If an idempotency key was provided, try to return the existing job (global unique key)
+        if (idempotencyKey != null && !idempotencyKey.isBlank()) {
+            Optional<SyncJob> byKey = syncJobRepository.findByIdempotencyKey(idempotencyKey);
+            if (byKey.isPresent()) {
+                log.info("Idempotent request detected idempotencyKey={} returning existing job id={}",
+                        idempotencyKey, byKey.get().getId());
+                return toResponse(byKey.get());
+            }
+        }
 
         Optional<SyncJob> existing = syncJobRepository.findByBatchIdAndSourceId(
                 request.batchId(), identity.sourceId());
@@ -36,12 +46,17 @@ public class IngestionService {
             return toResponse(existing.get());
         }
 
-        SyncJob job = SyncJob.builder()
+        SyncJob.SyncJobBuilder jobBuilder = SyncJob.builder()
                 .batchId(request.batchId())
                 .sourceId(identity.sourceId())
                 .status(SyncJobStatus.PENDING)
-                .totalReceived(request.transactions().size())
-                .build();
+                .totalReceived(request.transactions().size());
+
+        if (idempotencyKey != null && !idempotencyKey.isBlank()) {
+            jobBuilder.idempotencyKey(idempotencyKey);
+        }
+
+        SyncJob job = jobBuilder.build();
 
         job = syncJobRepository.save(job);
         batchProcessorService.process(job.getId(), request, identity);

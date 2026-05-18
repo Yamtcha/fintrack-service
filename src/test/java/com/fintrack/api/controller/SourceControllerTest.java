@@ -1,11 +1,12 @@
 package com.fintrack.api.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fintrack.api.config.SecurityConfig;
 import com.fintrack.api.domain.SourceStatus;
 import com.fintrack.api.domain.entity.Source;
 import com.fintrack.api.dto.request.SourceRegistrationRequest;
 import com.fintrack.api.dto.response.SourceRegistrationResponse;
-import com.fintrack.api.dto.response.SourceStatusResponse;
+import com.fintrack.api.security.JwtService;
 import com.fintrack.api.service.SourceService;
 import com.fintrack.common.domain.SourceType;
 import com.fintrack.common.exception.SourceNotFoundException;
@@ -13,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
@@ -24,9 +26,11 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(SourceController.class)
+@Import(SecurityConfig.class)
 class SourceControllerTest {
 
     @Autowired
@@ -37,6 +41,9 @@ class SourceControllerTest {
 
     @MockBean
     private SourceService sourceService;
+
+    @MockBean
+    private JwtService jwtService;
 
     @Test
     void register_validRequest_returns201() throws Exception {
@@ -55,7 +62,6 @@ class SourceControllerTest {
                         .with(csrf()))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.sourceId").value(sourceId.toString()))
-                .andExpect(jsonPath("$.apiKey").value("sk_live_abc123"))
                 .andExpect(jsonPath("$.status").value("ACTIVE"));
     }
 

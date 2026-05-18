@@ -17,6 +17,10 @@ public interface SyncJobRepository extends JpaRepository<SyncJob, UUID> {
 
     Optional<SyncJob> findByBatchId(String batchId);
 
+    Optional<SyncJob> findByIdempotencyKeyAndSourceId(String idempotencyKey, UUID sourceId);
+
+    Optional<SyncJob> findByIdempotencyKey(String idempotencyKey);
+
     Page<SyncJob> findBySourceId(UUID sourceId, Pageable pageable);
 
     Page<SyncJob> findBySourceIdAndStatus(UUID sourceId, SyncJobStatus status, Pageable pageable);

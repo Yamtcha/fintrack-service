@@ -24,6 +24,9 @@ public class SyncJob {
     @Column(name = "batch_id", nullable = false)
     private String batchId;
 
+    @Column(name = "idempotency_key", unique = true)
+    private String idempotencyKey;
+
     @Column(name = "source_id", nullable = false)
     private UUID sourceId;
 

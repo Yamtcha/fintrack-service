@@ -18,9 +18,7 @@ public class RabbitMQConfig {
     public static final String DEBT_QUEUE               = "fintrack.debt";
     public static final String DEAD_LETTER_QUEUE        = "fintrack.dead-letter";
 
-    public static final String ROUTING_KEY_SPENDING = "transaction.SPENDING";
-    public static final String ROUTING_KEY_TRADE        = "transaction.TRADE";
-    public static final String ROUTING_KEY_DEBT_PAYMENT = "transaction.DEBT_PAYMENT";
+    public static final String ROUTING_KEY_TRANSACTION = "transaction.TRANSACTION";
 
     @Bean
     public TopicExchange transactionsExchange() {
@@ -63,17 +61,7 @@ public class RabbitMQConfig {
 
     @Bean
     public Binding spendingPaymentBinding(Queue spendingQueue, TopicExchange transactionsExchange) {
-        return BindingBuilder.bind(spendingQueue).to(transactionsExchange).with(ROUTING_KEY_SPENDING);
-    }
-
-    @Bean
-    public Binding portfolioBinding(Queue portfolioQueue, TopicExchange transactionsExchange) {
-        return BindingBuilder.bind(portfolioQueue).to(transactionsExchange).with(ROUTING_KEY_TRADE);
-    }
-
-    @Bean
-    public Binding debtPaymentBinding(Queue debtQueue, TopicExchange transactionsExchange) {
-        return BindingBuilder.bind(debtQueue).to(transactionsExchange).with(ROUTING_KEY_DEBT_PAYMENT);
+        return BindingBuilder.bind(spendingQueue).to(transactionsExchange).with(ROUTING_KEY_TRANSACTION);
     }
 
     @Bean

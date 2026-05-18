@@ -5,13 +5,94 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ef854bf-2e14-4ee4-bd24-a30267c775bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V5__add_idempotency_key_to_sync_jobs.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/service/IngestionServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/service/PublisherServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fintrack-api.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/CreditAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/CreditAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/DebitAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/DebitAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/InvestmentsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/InvestmentsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/LoansAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/adapter/LoansAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/config/RabbitMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/IngestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/IngestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/domain/entity/SyncJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/domain/entity/SyncJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/domain/repository/SyncJobRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/domain/repository/SyncJobRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/IngestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/IngestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/PublisherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/PublisherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/SourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/SourceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/CreditAdapterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/DebitAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/DebitAdapterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/InvestmentsAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/InvestmentsAdapterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/LoansAdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/adapter/LoansAdapterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/controller/IngestionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/controller/IngestionControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/controller/SourceControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/controller/SourceControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/CreditAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/CreditAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/DebitAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/DebitAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/InvestmentsAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/InvestmentsAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/LoansAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/adapter/LoansAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/config/RabbitMQConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/config/RabbitMQConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/controller/IngestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/controller/IngestionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/domain/entity/SyncJob$SyncJobBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/domain/entity/SyncJob$SyncJobBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/domain/entity/SyncJob.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/domain/entity/SyncJob.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/domain/repository/SyncJobRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/domain/repository/SyncJobRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/IngestionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/IngestionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/PublisherService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/PublisherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/PublisherService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/SourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/SourceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/fintrack-api-1.0.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/fintrack-api-1.0.0-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/CreditAdapterTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/DebitAdapterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/DebitAdapterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/InvestmentsAdapterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/InvestmentsAdapterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/LoansAdapterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/adapter/LoansAdapterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/controller/IngestionControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/controller/IngestionControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotChats">
+    <option name="panelChat">
+      <chat>
+        <option name="activeSessionId" value="240f72a5-3a41-44f9-860f-046ba68abcd7" />
+        <option name="sessions">
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="6238348c-4508-4708-ab18-c55303037cf7" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="240f72a5-3a41-44f9-860f-046ba68abcd7" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+        </option>
+        <option name="type" value="PANEL" />
+      </chat>
+    </option>
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/yamkela.venfolo/OneDrive - Entelect Software (Pty) Ltd/Documents/Github/personal/fintrack-service" value="3Dj7jIHLSq23HC8PErKWW98M3Vn" />
+    </persistenceIdMap>
+  </component>
+  <component name="CopilotUserSelectedModel">
+    <selectedModels>
+      <entry key="agent-panel" value="Auto" />
+      <entry key="chat-panel" value="Auto" />
+    </selectedModels>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,42 +109,65 @@
     &quot;accountId&quot;: &quot;51ca376a-4c7a-4819-89e5-a91a19728ebe&quot;
   }
 }</component>
-  <component name="MavenRunner">
-    <option name="skipTests" value="true" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="3Dj7jIHLSq23HC8PErKWW98M3Vn" />
+  <component name="ProjectSessionTemplates">
+    <option name="panelTemplate">
+      <template>
+        <option name="modeId" value="Agent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="LOCAL" />
+      </template>
+    </option>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Maven.fintrack-api [clean,install,-U].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.fintrack-api [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yamkela.venfolo/OneDrive - Entelect Software (Pty) Ltd/Documents/Github/personal/fintrack-service&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "JUnit.DebitAdapterTest.executor": "Run",
+    "JUnit.IngestionControllerTest.executor": "Run",
+    "JUnit.IngestionControllerTest.ingest_unauthenticated_returns401.executor": "Run",
+    "JUnit.IngestionControllerTest.ingest_unauthenticated_returns403.executor": "Run",
+    "JUnit.IngestionControllerTest.ingest_validBatch_returns202.executor": "Run",
+    "JUnit.IngestionServiceTest.executor": "Run",
+    "JUnit.InvestmentsAdapterTest.executor": "Run",
+    "JUnit.LoansAdapterTest.executor": "Run",
+    "JUnit.PublisherServiceTest.executor": "Run",
+    "JUnit.SourceControllerTest.executor": "Run",
+    "JUnit.SourceControllerTest.register_validRequest_returns201.executor": "Run",
+    "Maven.fintrack-api [clean,install,-U].executor": "Run",
+    "Maven.fintrack-api [clean,install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "develop",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/yamkela.venfolo/OneDrive - Entelect Software (Pty) Ltd/Documents/Github/personal/fintrack-service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\test\java" />
@@ -75,11 +179,89 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn clean install" />
       <command value="mvn clean install -U" />
+      <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.SourceControllerTest.register_missingName_returns400">
+    <configuration name="IngestionControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fintrack-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fintrack.api.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fintrack.api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.fintrack.api.controller.IngestionControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IngestionControllerTest.ingest_unauthenticated_returns403" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fintrack-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fintrack.api.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fintrack.api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.fintrack.api.controller.IngestionControllerTest" />
+      <option name="METHOD_NAME" value="ingest_unauthenticated_returns403" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SourceControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fintrack-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fintrack.api.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fintrack.api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.fintrack.api.controller.SourceControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SourceControllerTest.register_missingName_returns400" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fintrack-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fintrack.api.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fintrack.api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.fintrack.api.controller.SourceControllerTest" />
+      <option name="METHOD_NAME" value="register_missingName_returns400" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SourceControllerTest.register_validRequest_returns201" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fintrack-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fintrack.api.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fintrack.api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.fintrack.api.controller.SourceControllerTest" />
+      <option name="METHOD_NAME" value="register_validRequest_returns201" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="fintrack-service" />
       <method v="2">
@@ -98,6 +280,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SourceControllerTest.register_missingName_returns400" />
+        <item itemvalue="JUnit.SourceControllerTest.register_validRequest_returns201" />
+        <item itemvalue="JUnit.SourceControllerTest" />
+        <item itemvalue="JUnit.IngestionControllerTest" />
+        <item itemvalue="JUnit.IngestionControllerTest.ingest_unauthenticated_returns403" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -108,11 +307,21 @@
       <updated>1778783758912</updated>
       <workItem from="1778783759950" duration="2674000" />
       <workItem from="1778786459157" duration="7729000" />
-      <workItem from="1779025875950" duration="11796000" />
+      <workItem from="1779025875950" duration="16277000" />
+      <workItem from="1779094965364" duration="595000" />
+      <workItem from="1779116035315" duration="4106000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>

@@ -9,7 +9,6 @@ com\fintrack\api\domain\repository\SyncJobRepository.class
 com\fintrack\api\domain\SyncJobStatus.class
 com\fintrack\api\domain\entity\Source.class
 com\fintrack\api\security\JwtService.class
-com\fintrack\api\service\PublisherService$1.class
 com\fintrack\api\adapter\CreditAdapter.class
 com\fintrack\api\service\AuthService.class
 com\fintrack\api\adapter\LoansAdapter.class

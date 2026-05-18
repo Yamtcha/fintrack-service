@@ -3,7 +3,6 @@ package com.fintrack.api.adapter;
 import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.common.domain.SourceType;
-import com.fintrack.common.domain.TransactionClass;
 import com.fintrack.common.domain.TransactionStatus;
 import com.fintrack.common.domain.TransactionType;
 import com.fintrack.common.model.Transaction;
@@ -25,7 +24,6 @@ public class LoansAdapter implements TransactionAdapter {
                 .externalId(raw.externalId())
                 .sourceId(source.sourceId().toString())
                 .sourceType(source.sourceType())
-                .transactionClass(TransactionClass.DEBT_PAYMENT)
                 .currency(raw.currency())
                 .amount(BigDecimal.valueOf(raw.amount()).movePointLeft(2))
                 .description(raw.description())
