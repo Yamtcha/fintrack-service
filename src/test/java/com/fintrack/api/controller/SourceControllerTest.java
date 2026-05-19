@@ -6,7 +6,7 @@ import com.fintrack.api.domain.SourceStatus;
 import com.fintrack.api.domain.entity.Source;
 import com.fintrack.api.dto.request.SourceRegistrationRequest;
 import com.fintrack.api.dto.response.SourceRegistrationResponse;
-import com.fintrack.api.security.JwtService;
+import com.fintrack.api.security.ApiKeyService;
 import com.fintrack.api.service.SourceService;
 import com.fintrack.common.domain.SourceType;
 import com.fintrack.common.exception.SourceNotFoundException;
@@ -43,7 +43,7 @@ class SourceControllerTest {
     private SourceService sourceService;
 
     @MockBean
-    private JwtService jwtService;
+    private ApiKeyService apiKeyService;
 
     @Test
     void register_validRequest_returns201() throws Exception {
@@ -52,7 +52,7 @@ class SourceControllerTest {
 
         UUID sourceId = UUID.randomUUID();
         SourceRegistrationResponse response = new SourceRegistrationResponse(
-                sourceId, SourceType.DEBIT, SourceStatus.ACTIVE, Instant.now());
+                sourceId, SourceType.DEBIT, SourceStatus.ACTIVE, Instant.now(), "test-api-key");
 
         when(sourceService.register(any())).thenReturn(response);
 

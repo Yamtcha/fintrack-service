@@ -9,6 +9,8 @@ import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.dto.request.TransactionIngestionRequest;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.common.model.Transaction;
+import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.Timer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
@@ -25,6 +27,7 @@ public class BatchProcessorService {
     private final SyncJobRepository syncJobRepository;
     private final AdapterRegistry adapterRegistry;
     private final PublisherService publisherService;
+    private final MeterRegistry meterRegistry;
 
     @Async
     public void process(UUID jobId, TransactionIngestionRequest request, SourceIdentity identity) {
@@ -33,6 +36,8 @@ public class BatchProcessorService {
 
         job.setStatus(SyncJobStatus.PROCESSING);
         syncJobRepository.save(job);
+
+        Timer.Sample sample = Timer.start(meterRegistry);
 
         int processed = 0;
         int failed = 0;
@@ -64,6 +69,19 @@ public class BatchProcessorService {
         }
 
         syncJobRepository.save(job);
+
+        sample.stop(Timer.builder("fintrack.ingestion.batch.duration")
+                .tag("source_type", identity.sourceType().name())
+                .tag("status", job.getStatus().name())
+                .register(meterRegistry));
+
+        meterRegistry.counter("fintrack.ingestion.transactions",
+                "source_type", identity.sourceType().name(), "result", "processed")
+                .increment(processed);
+        meterRegistry.counter("fintrack.ingestion.transactions",
+                "source_type", identity.sourceType().name(), "result", "failed")
+                .increment(failed);
+
         log.info("Batch completed batchId={} status={} processed={} failed={}",
                 request.batchId(), job.getStatus(), processed, failed);
     }

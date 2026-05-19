@@ -5,7 +5,7 @@ import com.fintrack.api.domain.SyncJobStatus;
 import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.dto.request.TransactionIngestionRequest;
 import com.fintrack.api.dto.response.IngestionResponse;
-import com.fintrack.api.security.JwtService;
+import com.fintrack.api.security.ApiKeyService;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.api.service.IngestionService;
 import com.fintrack.common.domain.SourceType;
@@ -43,7 +43,7 @@ class IngestionControllerTest {
     private IngestionService ingestionService;
 
     @MockBean
-    private JwtService jwtService;
+    private ApiKeyService apiKeyService;
 
     private UsernamePasswordAuthenticationToken sourceAuth() {
         SourceIdentity identity = new SourceIdentity(UUID.randomUUID(), SourceType.DEBIT);

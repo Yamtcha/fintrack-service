@@ -10,5 +10,6 @@ public record SourceRegistrationResponse(
         UUID sourceId,
         SourceType sourceType,
         SourceStatus status,
-        Instant registeredAt
+        Instant registeredAt,
+        String apiKey
 ) {}

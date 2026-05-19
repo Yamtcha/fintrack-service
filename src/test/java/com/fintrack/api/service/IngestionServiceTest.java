@@ -8,11 +8,12 @@ import com.fintrack.api.dto.request.TransactionIngestionRequest;
 import com.fintrack.api.dto.response.IngestionResponse;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.common.domain.SourceType;
+import io.micrometer.core.instrument.simple.SimpleMeterRegistry;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -37,8 +38,12 @@ class IngestionServiceTest {
     @Mock
     BatchProcessorService batchProcessorService;
 
-    @InjectMocks
-    IngestionService ingestionService;
+    private IngestionService ingestionService;
+
+    @BeforeEach
+    void setUp() {
+        ingestionService = new IngestionService(syncJobRepository, batchProcessorService, new SimpleMeterRegistry());
+    }
 
     @AfterEach
     void tearDown() {
@@ -84,7 +89,6 @@ class IngestionServiceTest {
         when(syncJobRepository.findByIdempotencyKey("new-key")).thenReturn(Optional.empty());
         when(syncJobRepository.findByBatchIdAndSourceId("batch-2", sourceId)).thenReturn(Optional.empty());
 
-        // capture saved job
         ArgumentCaptor<SyncJob> captor = ArgumentCaptor.forClass(SyncJob.class);
         SyncJob saved = SyncJob.builder()
                 .id(UUID.randomUUID())
@@ -112,4 +116,3 @@ class IngestionServiceTest {
         verify(batchProcessorService).process(eq(saved.getId()), eq(request), any());
     }
 }
-

@@ -24,11 +24,24 @@ spring:
     ssl:
       enabled: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus
+  endpoint:
+    health:
+      show-details: when-authorized
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 fintrack:
-  jwt:
-    secret: ${JWT_SECRET}
-    expiry-hours: 24
+  api-key:
+    secret: ${API_KEY_SECRET}
+  rabbitmq:
+    exchange: fintrack.transactions
+    routing-key-transaction: transaction.TRANSACTION
   ingestion:
     batch-size-limit: 1000
     dedup-ttl-hours: 24

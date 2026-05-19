@@ -7,6 +7,7 @@ import com.fintrack.api.dto.request.TransactionIngestionRequest;
 import com.fintrack.api.dto.response.IngestionResponse;
 import com.fintrack.api.security.SourceIdentity;
 import com.fintrack.common.exception.SourceNotFoundException;
+import io.micrometer.core.instrument.MeterRegistry;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
@@ -23,17 +24,20 @@ public class IngestionService {
 
     private final SyncJobRepository syncJobRepository;
     private final BatchProcessorService batchProcessorService;
+    private final MeterRegistry meterRegistry;
 
     @Transactional
     public IngestionResponse ingest(TransactionIngestionRequest request, String idempotencyKey) {
         SourceIdentity identity = resolveIdentity();
+        String sourceType = identity.sourceType().name();
 
-        // If an idempotency key was provided, try to return the existing job (global unique key)
         if (idempotencyKey != null && !idempotencyKey.isBlank()) {
             Optional<SyncJob> byKey = syncJobRepository.findByIdempotencyKey(idempotencyKey);
             if (byKey.isPresent()) {
                 log.info("Idempotent request detected idempotencyKey={} returning existing job id={}",
                         idempotencyKey, byKey.get().getId());
+                meterRegistry.counter("fintrack.ingestion.batches",
+                        "source_type", sourceType, "outcome", "idempotent_hit").increment();
                 return toResponse(byKey.get());
             }
         }
@@ -43,6 +47,8 @@ public class IngestionService {
         if (existing.isPresent()) {
             log.info("Duplicate batch batchId={} sourceId={}, returning existing job",
                     request.batchId(), identity.sourceId());
+            meterRegistry.counter("fintrack.ingestion.batches",
+                    "source_type", sourceType, "outcome", "duplicate").increment();
             return toResponse(existing.get());
         }
 
@@ -57,8 +63,11 @@ public class IngestionService {
         }
 
         SyncJob job = jobBuilder.build();
-
         job = syncJobRepository.save(job);
+
+        meterRegistry.counter("fintrack.ingestion.batches",
+                "source_type", sourceType, "outcome", "accepted").increment();
+
         batchProcessorService.process(job.getId(), request, identity);
 
         return toResponse(job);
