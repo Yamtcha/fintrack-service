@@ -17,7 +17,6 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
-import java.util.UUID;
 
 @Slf4j
 @Service
@@ -30,10 +29,7 @@ public class BatchProcessorService {
     private final MeterRegistry meterRegistry;
 
     @Async
-    public void process(UUID jobId, TransactionIngestionRequest request, SourceIdentity identity) {
-        SyncJob job = syncJobRepository.findById(jobId)
-                .orElseThrow(() -> new IllegalStateException("SyncJob not found: " + jobId));
-
+    public void process(SyncJob job, TransactionIngestionRequest request, SourceIdentity identity) {
         job.setStatus(SyncJobStatus.PROCESSING);
         syncJobRepository.save(job);
 

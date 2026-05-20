@@ -113,6 +113,6 @@ class IngestionServiceTest {
         SyncJob toSave = captor.getValue();
         assertThat(toSave.getIdempotencyKey()).isEqualTo("new-key");
 
-        verify(batchProcessorService).process(eq(saved.getId()), eq(request), any());
+        verify(batchProcessorService).process(eq(saved), eq(request), any());
     }
 }

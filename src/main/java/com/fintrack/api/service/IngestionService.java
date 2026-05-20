@@ -68,7 +68,7 @@ public class IngestionService {
         meterRegistry.counter("fintrack.ingestion.batches",
                 "source_type", sourceType, "outcome", "accepted").increment();
 
-        batchProcessorService.process(job.getId(), request, identity);
+        batchProcessorService.process(job, request, identity);
 
         return toResponse(job);
     }
