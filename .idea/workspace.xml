@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ef854bf-2e14-4ee4-bd24-a30267c775bd" name="Changes" comment="update the endpoint">
+    <list default="true" id="7ef854bf-2e14-4ee4-bd24-a30267c775bd" name="Changes" comment="address the race condition with job sych">
       <change afterPath="$PROJECT_DIR$/settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/BatchProcessorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/BatchProcessorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/IngestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/IngestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/service/IngestionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/service/IngestionServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/config/RabbitMQConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +267,7 @@
       <workItem from="1779025875950" duration="16277000" />
       <workItem from="1779094965364" duration="595000" />
       <workItem from="1779116035315" duration="7306000" />
-      <workItem from="1779179649588" duration="30312000" />
+      <workItem from="1779179649588" duration="30954000" />
     </task>
     <task id="LOCAL-00001" summary="standardase the api-key usage">
       <option name="closed" value="true" />
@@ -311,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779305940598</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="address the race condition with job sych">
+      <option name="closed" value="true" />
+      <created>1779307523042</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1779307523042</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +329,8 @@
     <MESSAGE value="add posgres dependency" />
     <MESSAGE value="remove health probe on the security config" />
     <MESSAGE value="update the endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="update the endpoint" />
+    <MESSAGE value="address the race condition with job sych" />
+    <option name="LAST_COMMIT_MESSAGE" value="address the race condition with job sych" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
