@@ -14,7 +14,7 @@
 
     <groupId>com.fintrack</groupId>
     <artifactId>fintrack-api</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>fintrack-api</name>
     <description>FinTrack API Ingestion Layer</description>
 
