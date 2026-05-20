@@ -5,30 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ef854bf-2e14-4ee4-bd24-a30267c775bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/config/RabbitMQConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/AuthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/domain/entity/SourceCredential.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/domain/repository/SourceCredentialRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/dto/request/TokenRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/dto/response/SourceRegistrationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/dto/response/SourceRegistrationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/dto/response/TokenResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/security/JwtAuthFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/security/JwtService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/AuthService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/BatchProcessorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/BatchProcessorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/IngestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/IngestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/PublisherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/PublisherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/SourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/SourceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/security/ApiKeyAuthFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/security/ApiKeyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/security/ApiKeyService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/controller/IngestionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/controller/IngestionControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/controller/SourceControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/controller/SourceControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/service/IngestionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/service/IngestionServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/service/PublisherServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/service/PublisherServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/fintrack-api-1.0.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/fintrack-api-1.0.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/fintrack-api-1.0.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/fintrack-api-1.0.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/controller/IngestionControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/controller/IngestionControllerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/controller/SourceControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/controller/SourceControllerTest.class" afterDir="false" />
     </list>
@@ -155,6 +148,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src\test\java" />
       <recent name="C:\Users\yamkela.venfolo\OneDrive - Entelect Software (Pty) Ltd\Documents\Github\personal\fintrack-service\src" />
@@ -288,7 +284,7 @@
       <workItem from="1779025875950" duration="16277000" />
       <workItem from="1779094965364" duration="595000" />
       <workItem from="1779116035315" duration="7306000" />
-      <workItem from="1779179649588" duration="6121000" />
+      <workItem from="1779179649588" duration="20821000" />
     </task>
     <servers />
   </component>

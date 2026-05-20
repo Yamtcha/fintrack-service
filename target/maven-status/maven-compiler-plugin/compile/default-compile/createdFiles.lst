@@ -3,6 +3,7 @@ com\fintrack\api\security\SourceIdentity.class
 com\fintrack\api\adapter\TransactionAdapter.class
 com\fintrack\api\config\RabbitMQConfig.class
 com\fintrack\api\domain\entity\SyncJob$SyncJobBuilder.class
+com\fintrack\api\config\ApiKeyAuthFilter.class
 com\fintrack\api\domain\repository\SyncJobRepository.class
 com\fintrack\api\domain\SyncJobStatus.class
 com\fintrack\api\domain\entity\Source.class
@@ -30,4 +31,3 @@ com\fintrack\api\config\SecurityConfig.class
 com\fintrack\api\dto\response\SourceStatusResponse.class
 com\fintrack\api\domain\entity\Source$SourceBuilder.class
 com\fintrack\api\dto\request\TransactionDto.class
-com\fintrack\api\security\ApiKeyAuthFilter.class

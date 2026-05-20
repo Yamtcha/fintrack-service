@@ -60,10 +60,9 @@
             <artifactId>micrometer-registry-prometheus</artifactId>
         </dependency>
 
-        <!-- fintrack-common from local Nexus -->
         <dependency>
             <groupId>com.fintrack</groupId>
-            <artifactId>fintrack-common</artifactId>
+            <artifactId>fintrack-commons</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
 

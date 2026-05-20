@@ -21,7 +21,7 @@ public class ApiKeyService {
 
     private final byte[] secretBytes;
 
-    public ApiKeyService(@Value("${fintrack.api-key.secret}") String secret) {
+    public ApiKeyService(@Value("${api.key}") String secret) {
         this.secretBytes = secret.getBytes(StandardCharsets.UTF_8);
     }
 

@@ -36,9 +36,10 @@ management:
     tags:
       application: ${spring.application.name}
 
+api:
+  key: ${API_KEY}
+
 fintrack:
-  api-key:
-    secret: ${API_KEY_SECRET}
   rabbitmq:
     exchange: fintrack.transactions
     routing-key-transaction: transaction.TRANSACTION
