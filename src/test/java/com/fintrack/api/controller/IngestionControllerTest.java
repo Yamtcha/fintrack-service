@@ -51,7 +51,7 @@ class IngestionControllerTest {
 
         when(ingestionService.ingest(any(), any())).thenReturn(response);
 
-        mockMvc.perform(post("/v1/sources/transactions")
+        mockMvc.perform(post("/v1/ingestion/transactions")
                         .contentType(MediaType.APPLICATION_JSON)
                         .header("X-API-Key", "test-key")
                         .content(objectMapper.writeValueAsString(request)))
@@ -66,7 +66,7 @@ class IngestionControllerTest {
     void ingest_emptyBatch_returns400() throws Exception {
         TransactionIngestionRequest request = new TransactionIngestionRequest("BATCH-001", List.of());
 
-        mockMvc.perform(post("/v1/sources/transactions")
+        mockMvc.perform(post("/v1/ingestion/transactions")
                         .contentType(MediaType.APPLICATION_JSON)
                         .header("X-API-Key", "test-key")
                         .content(objectMapper.writeValueAsString(request)))
@@ -79,7 +79,7 @@ class IngestionControllerTest {
                 "TXN-001", 4999L, "ZAR","WOOLWORTHS", "WOOLWORTHS", Instant.now(), null);
         TransactionIngestionRequest request = new TransactionIngestionRequest("", List.of(transaction));
 
-        mockMvc.perform(post("/v1/sources/transactions")
+        mockMvc.perform(post("/v1/ingestion/transactions")
                         .contentType(MediaType.APPLICATION_JSON)
                         .header("X-API-Key", "test-key")
                         .content(objectMapper.writeValueAsString(request)))
@@ -92,7 +92,7 @@ class IngestionControllerTest {
                 "TXN-001", 4999L, "ZAR","WOOLWORTHS", "WOOLWORTHS", Instant.now(), null);
         TransactionIngestionRequest request = new TransactionIngestionRequest("BATCH-001", List.of(transaction));
 
-        mockMvc.perform(post("/v1/sources/transactions")
+        mockMvc.perform(post("/v1/ingestion/transactions")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isUnauthorized());

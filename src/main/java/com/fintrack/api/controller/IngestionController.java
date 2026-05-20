@@ -16,7 +16,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1/sources")
+@RequestMapping("/v1/ingestion")
 @RequiredArgsConstructor
 @Validated
 @Tag(name = "Ingestion", description = "Transaction batch ingestion")

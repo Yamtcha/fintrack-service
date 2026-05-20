@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ef854bf-2e14-4ee4-bd24-a30267c775bd" name="Changes" comment="add posgres dependency">
+    <list default="true" id="7ef854bf-2e14-4ee4-bd24-a30267c775bd" name="Changes" comment="remove health probe on the security config">
       <change afterPath="$PROJECT_DIR$/settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/fintrack-api-1.0.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/fintrack-api-1.0.0-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/IngestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/IngestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/controller/IngestionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/controller/IngestionControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/controller/IngestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/controller/IngestionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/controller/IngestionControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/fintrack/api/controller/IngestionControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +273,7 @@
       <workItem from="1779025875950" duration="16277000" />
       <workItem from="1779094965364" duration="595000" />
       <workItem from="1779116035315" duration="7306000" />
-      <workItem from="1779179649588" duration="28496000" />
+      <workItem from="1779179649588" duration="29607000" />
     </task>
     <task id="LOCAL-00001" summary="standardase the api-key usage">
       <option name="closed" value="true" />
@@ -300,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779289357785</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="remove health probe on the security config">
+      <option name="closed" value="true" />
+      <created>1779304651634</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1779304651634</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,7 +317,8 @@
     <MESSAGE value="standardase the api-key usage" />
     <MESSAGE value="clean up" />
     <MESSAGE value="add posgres dependency" />
-    <option name="LAST_COMMIT_MESSAGE" value="add posgres dependency" />
+    <MESSAGE value="remove health probe on the security config" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove health probe on the security config" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
