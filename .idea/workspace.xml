@@ -7,11 +7,6 @@
     <list default="true" id="7ef854bf-2e14-4ee4-bd24-a30267c775bd" name="Changes" comment="update RabbitMQConfig">
       <change afterPath="$PROJECT_DIR$/settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/IngestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/IngestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/SourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/SourceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +267,7 @@
       <workItem from="1779025875950" duration="16277000" />
       <workItem from="1779094965364" duration="595000" />
       <workItem from="1779116035315" duration="7306000" />
-      <workItem from="1779179649588" duration="32558000" />
+      <workItem from="1779179649588" duration="33158000" />
     </task>
     <task id="LOCAL-00001" summary="standardase the api-key usage">
       <option name="closed" value="true" />
@@ -330,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779310103060</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update RabbitMQConfig">
+      <option name="closed" value="true" />
+      <created>1779347895725</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779347895725</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

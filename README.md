@@ -201,6 +201,8 @@ Failed publishes are retried up to **3 times** with exponential backoff (200ms â
 | `RABBITMQ_HOST` | RabbitMQ hostname |
 | `RABBITMQ_USERNAME` | RabbitMQ username |
 | `RABBITMQ_PASSWORD` | RabbitMQ password |
+| `GITHUB_USERNAME` | GitHub username â€” used by Maven to pull `fintrack-commons` from GitHub Packages |
+| `GITHUB_TOKEN` | GitHub Personal Access Token with `read:packages` scope |
 
 RabbitMQ connects on port `5671` with SSL enabled.
 
