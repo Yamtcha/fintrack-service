@@ -6,6 +6,7 @@ import com.fintrack.api.domain.SyncJobStatus;
 import com.fintrack.api.dto.request.TransactionDto;
 import com.fintrack.api.dto.request.TransactionIngestionRequest;
 import com.fintrack.api.dto.response.IngestionResponse;
+import com.fintrack.api.security.ApiKeyService;
 import com.fintrack.api.service.IngestionService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,9 @@ class IngestionControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @MockBean
+    private ApiKeyService apiKeyService;
 
     @MockBean
     private IngestionService ingestionService;

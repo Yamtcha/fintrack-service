@@ -6,6 +6,7 @@ import com.fintrack.api.domain.SourceStatus;
 import com.fintrack.api.domain.entity.Source;
 import com.fintrack.api.dto.request.SourceRegistrationRequest;
 import com.fintrack.api.dto.response.SourceRegistrationResponse;
+import com.fintrack.api.security.ApiKeyService;
 import com.fintrack.api.service.SourceService;
 import com.fintrack.common.domain.SourceType;
 import com.fintrack.common.exception.SourceNotFoundException;
@@ -37,6 +38,9 @@ class SourceControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @MockBean
+    private ApiKeyService apiKeyService;
 
     @MockBean
     private SourceService sourceService;

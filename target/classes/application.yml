@@ -27,6 +27,10 @@ spring:
 api:
   key: ${API_KEY}
 
+logging:
+  level:
+    com.fintrack.api: ERROR
+
 fintrack:
   rabbitmq:
     exchange: fintrack.transactions
