@@ -24,16 +24,19 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(SourceNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleSourceNotFound(SourceNotFoundException ex) {
+        log.error("Source not found: {}", ex.getMessage());
         return build(HttpStatus.NOT_FOUND, "SOURCE_NOT_FOUND", ex.getMessage());
     }
 
     @ExceptionHandler(InvalidSourceTypeException.class)
     public ResponseEntity<ErrorResponse> handleInvalidSourceType(InvalidSourceTypeException ex) {
+        log.error("Invalid source type: {}", ex.getMessage());
         return build(HttpStatus.BAD_REQUEST, "INVALID_SOURCE_TYPE", ex.getMessage());
     }
 
     @ExceptionHandler(DuplicateTransactionException.class)
     public ResponseEntity<ErrorResponse> handleDuplicateTransaction(DuplicateTransactionException ex) {
+        log.error("Duplicate transaction: {}", ex.getMessage());
         return build(HttpStatus.CONFLICT, "DUPLICATE_TRANSACTION", ex.getMessage());
     }
 
@@ -42,16 +45,19 @@ public class GlobalExceptionHandler {
         String details = ex.getBindingResult().getFieldErrors().stream()
                 .map(FieldError::getDefaultMessage)
                 .collect(Collectors.joining("; "));
+        log.error("Validation failed: {}", details);
         return build(HttpStatus.BAD_REQUEST, "VALIDATION_ERROR", details);
     }
 
     @ExceptionHandler(AuthenticationException.class)
     public ResponseEntity<ErrorResponse> handleAuthentication(AuthenticationException ex) {
+        log.error("Authentication failure: {}", ex.getMessage());
         return build(HttpStatus.UNAUTHORIZED, "UNAUTHORIZED", ex.getMessage());
     }
 
     @ExceptionHandler(AccessDeniedException.class)
     public ResponseEntity<ErrorResponse> handleAccessDenied(AccessDeniedException ex) {
+        log.error("Access denied: {}", ex.getMessage());
         return build(HttpStatus.FORBIDDEN, "FORBIDDEN", ex.getMessage());
     }
 

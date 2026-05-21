@@ -10,11 +10,13 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
 @RequestMapping("/v1/ingestion")
 @RequiredArgsConstructor
@@ -32,12 +34,14 @@ public class IngestionController {
             @Pattern(regexp = "^[A-Za-z0-9._:-]+$", message = "Idempotency-Key contains invalid characters")
             String idempotencyKey,
             @Valid @RequestBody TransactionIngestionRequest request) {
+        log.error("Ingestion request received batchId={} transactionCount={}", request.batchId(), request.transactions().size());
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(ingestionService.ingest(request, idempotencyKey));
     }
 
     @GetMapping("/sync/status/{batchId}")
     @Operation(summary = "Get sync job status for a batch")
     public ResponseEntity<SyncJob> getSyncStatus(@PathVariable String batchId) {
+        log.error("Sync status requested batchId={}", batchId);
         return ResponseEntity.ok(ingestionService.getSyncJobByBatchId(batchId));
     }
 }
