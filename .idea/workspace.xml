@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ef854bf-2e14-4ee4-bd24-a30267c775bd" name="Changes" comment="update RabbitMQConfig">
-      <change afterPath="$PROJECT_DIR$/settings.xml" afterDir="false" />
+    <list default="true" id="7ef854bf-2e14-4ee4-bd24-a30267c775bd" name="Changes" comment="update the settings.xml file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -267,7 +266,7 @@
       <workItem from="1779025875950" duration="16277000" />
       <workItem from="1779094965364" duration="595000" />
       <workItem from="1779116035315" duration="7306000" />
-      <workItem from="1779179649588" duration="33158000" />
+      <workItem from="1779179649588" duration="33872000" />
     </task>
     <task id="LOCAL-00001" summary="standardase the api-key usage">
       <option name="closed" value="true" />
@@ -333,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779347895725</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update the settings.xml file">
+      <option name="closed" value="true" />
+      <created>1779348339268</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1779348339268</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +354,8 @@
     <MESSAGE value="update the endpoint" />
     <MESSAGE value="address the race condition with job sych" />
     <MESSAGE value="update RabbitMQConfig" />
-    <option name="LAST_COMMIT_MESSAGE" value="update RabbitMQConfig" />
+    <MESSAGE value="update the settings.xml file" />
+    <option name="LAST_COMMIT_MESSAGE" value="update the settings.xml file" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
