@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ef854bf-2e14-4ee4-bd24-a30267c775bd" name="Changes" comment="update the settings.xml file">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/IngestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/controller/IngestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/BatchProcessorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/BatchProcessorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/IngestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/IngestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/SourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fintrack/api/service/SourceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/controller/IngestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/controller/IngestionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/BatchProcessorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/BatchProcessorService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/IngestionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/IngestionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/SourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fintrack/api/service/SourceService.class" afterDir="false" />
+    <list default="true" id="7ef854bf-2e14-4ee4-bd24-a30267c775bd" name="Changes" comment="Improve BatchProcessorService sync processes">
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/fintrack/api/service/IngestionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/fintrack/api/service/IngestionServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +267,7 @@
       <workItem from="1779094965364" duration="595000" />
       <workItem from="1779116035315" duration="7306000" />
       <workItem from="1779179649588" duration="35956000" />
-      <workItem from="1779454107165" duration="1869000" />
+      <workItem from="1779454107165" duration="2516000" />
     </task>
     <task id="LOCAL-00001" summary="standardase the api-key usage">
       <option name="closed" value="true" />
@@ -365,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779349741718</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Improve BatchProcessorService sync processes">
+      <option name="closed" value="true" />
+      <created>1779456105010</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1779456105010</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +380,8 @@
     <MESSAGE value="address the race condition with job sych" />
     <MESSAGE value="update RabbitMQConfig" />
     <MESSAGE value="update the settings.xml file" />
-    <option name="LAST_COMMIT_MESSAGE" value="update the settings.xml file" />
+    <MESSAGE value="Improve BatchProcessorService sync processes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve BatchProcessorService sync processes" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
