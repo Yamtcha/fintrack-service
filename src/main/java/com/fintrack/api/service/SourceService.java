@@ -24,23 +24,25 @@ public class SourceService {
 
     @Transactional
     public SourceRegistrationResponse register(SourceRegistrationRequest request) {
-
+        // ── Build and save source ─────────────────────────────────────────────
         Source source = Source.builder()
                 .name(request.name())
                 .sourceType(request.sourceType())
                 .status(SourceStatus.ACTIVE)
                 .build();
 
-        source = sourceRepository.save(source);
-        log.info("Registered source id={} name={} type={}", source.getId(), source.getName(), source.getSourceType());
+        Source savedSource = sourceRepository.save(source);
+        log.info("Registered source id={} name={} type={}",
+                savedSource.getId(), savedSource.getName(), savedSource.getSourceType());
 
-        String apiKey = apiKeyService.generateKey(source.getId(), source.getSourceType());
+        // ── Generate API key ──────────────────────────────────────────────────
+        String apiKey = apiKeyService.generateKey(savedSource.getId(), savedSource.getSourceType());
 
         return new SourceRegistrationResponse(
-                source.getId(),
-                source.getSourceType(),
-                source.getStatus(),
-                source.getRegisteredAt(),
+                savedSource.getId(),
+                savedSource.getSourceType(),
+                savedSource.getStatus(),
+                savedSource.getRegisteredAt(),
                 apiKey
         );
     }
@@ -53,7 +55,8 @@ public class SourceService {
 
     @Transactional
     public void deactivate(UUID sourceId) {
-        Source source = getSource(sourceId);
+        Source source = sourceRepository.findById(sourceId)
+                .orElseThrow(() -> new SourceNotFoundException("Source not found: " + sourceId));
         source.setStatus(SourceStatus.INACTIVE);
         sourceRepository.save(source);
         log.info("Deactivated source id={}", sourceId);

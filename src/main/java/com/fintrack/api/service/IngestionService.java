@@ -31,6 +31,7 @@ public class IngestionService {
         SourceIdentity identity = resolveIdentity();
         String sourceType = identity.sourceType().name();
 
+        // ── Idempotency check ─────────────────────────────────────────────────
         if (idempotencyKey != null && !idempotencyKey.isBlank()) {
             Optional<SyncJob> byKey = syncJobRepository.findByIdempotencyKey(idempotencyKey);
             if (byKey.isPresent()) {
@@ -42,6 +43,7 @@ public class IngestionService {
             }
         }
 
+        // ── Duplicate batch check ─────────────────────────────────────────────
         Optional<SyncJob> existing = syncJobRepository.findByBatchIdAndSourceId(
                 request.batchId(), identity.sourceId());
         if (existing.isPresent()) {
@@ -52,6 +54,7 @@ public class IngestionService {
             return toResponse(existing.get());
         }
 
+        // ── Build and save job ────────────────────────────────────────────────
         SyncJob.SyncJobBuilder jobBuilder = SyncJob.builder()
                 .batchId(request.batchId())
                 .sourceId(identity.sourceId())
@@ -62,29 +65,33 @@ public class IngestionService {
             jobBuilder.idempotencyKey(idempotencyKey);
         }
 
-        SyncJob job = jobBuilder.build();
-        job = syncJobRepository.save(job);
+        SyncJob savedJob = syncJobRepository.save(jobBuilder.build());
 
         meterRegistry.counter("fintrack.ingestion.batches",
                 "source_type", sourceType, "outcome", "accepted").increment();
 
-        batchProcessorService.process(job, request, identity);
-
-        return toResponse(job);
+        // ── Dispatch to async processor and return immediately ────────────────
+        batchProcessorService.process(savedJob, request, identity);
+        return toResponse(savedJob);
     }
 
     @Transactional(readOnly = true)
     public SyncJob getSyncJobByBatchId(String batchId) {
         return syncJobRepository.findByBatchId(batchId)
-                .orElseThrow(() -> new SourceNotFoundException("No sync job found for batchId: " + batchId));
+                .orElseThrow(() -> new SourceNotFoundException(
+                        "No sync job found for batchId: " + batchId));
     }
 
     private SourceIdentity resolveIdentity() {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Object principal = SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getPrincipal();
+
         if (principal instanceof SourceIdentity identity) {
             return identity;
         }
-        throw new AuthenticationCredentialsNotFoundException("No source identity in security context");
+        throw new AuthenticationCredentialsNotFoundException(
+                "No source identity in security context");
     }
 
     private IngestionResponse toResponse(SyncJob job) {
